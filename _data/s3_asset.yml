@@ -1,0 +1,23 @@
+- func_name: Upload
+  content: >
+    This feature helps in uploading the files to s3 bucket. It will upload the given source file to s3 and returns the 
+    upload path as response
+  link: /upload.html
+
+- func_name: Download
+  content: >
+    This feature downloads the specified file from s3 bucket to destination path and returns True if download success or 
+    False otherwise. It will alsoo support recursive download if we set keyword arguent 'recursive' to true (default is false).
+  link: /download.html
+
+- func_name: Delete
+  content: >
+    This feature deletes the given file from s3 bucket and returns True if deletion successful or False otherwise.
+  link: /delete.html
+
+- func_name: List Files
+  content: >
+    This feature provide the list of the files in the s3 bucket for specific prefix. If prefix is not specified it will return
+    all the files. It also support pagination. PageSize default value is 100 and MaxItems default value is 1000 and page.
+    If page is not provided it will return total response.
+  lin: /list_files.html

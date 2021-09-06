@@ -1,0 +1,34 @@
+---
+layout: default
+title: S3-Asset-Docs
+---
+
+<h1>S3 Asset documentation</h1>
+<div>
+    <p>Using the s3 asset we can perform some functionalities on s3 bucket like<br/>
+        {% for item in site.data.s3_functionalities %}
+            <p>On <b>{{item.func_name}}</b> functionality possibilities are</p>
+            <ul>
+                {% for possibility in item.possibilities%}
+                <li>{{possibility}}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </p>
+</div>
+
+<br/><br/>
+<div>
+    {% for item in site.data.s3_asset %}
+    <p>
+        <h3>
+            <b>
+                <a href="{{item.link}}"> {{ item.func_name }} </a>
+            </b>
+        </h3>
+        <br/>
+        {{ item.content }}
+        <br/><br/>
+    </p>
+    {% endfor %}
+</div>

@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>S3-Asset-Docs</title>
+    </head>
+    <body>
+        <h1>S3 Asset documentation</h1>
+<div>
+    <p>Using the s3 asset we can perform some functionalities on s3 bucket like<br/>
+        
+            <p>On <b>upload</b> functionality possibilities are</p>
+            <ul>
+                
+                <li>upload_file</li>
+                
+                <li>upload_file_binary</li>
+                
+            </ul>
+        
+            <p>On <b>download</b> functionality possibilities are</p>
+            <ul>
+                
+                <li>download_file</li>
+                
+                <li>download_folder</li>
+                
+                <li>download_binary_content</li>
+                
+            </ul>
+        
+            <p>On <b>delete</b> functionality possibilities are</p>
+            <ul>
+                
+                <li>delete</li>
+                
+            </ul>
+        
+            <p>On <b>list_files</b> functionality possibilities are</p>
+            <ul>
+                
+                <li>list_files</li>
+                
+            </ul>
+        
+    </p>
+</div>
+
+<br/><br/>
+<div>
+    
+    <p>
+        <h3>
+            <b>
+                <a href="/upload.html"> Upload </a>
+            </b>
+        </h3>
+        <br/>
+        This feature helps in uploading the files to s3 bucket. It will upload the given source file to s3 and returns the  upload path as response
+
+        <br/><br/>
+    </p>
+    
+    <p>
+        <h3>
+            <b>
+                <a href="/download.html"> Download </a>
+            </b>
+        </h3>
+        <br/>
+        This feature downloads the specified file from s3 bucket to destination path and returns True if download success or  False otherwise. It will alsoo support recursive download if we set keyword arguent 'recursive' to true (default is false).
+
+        <br/><br/>
+    </p>
+    
+    <p>
+        <h3>
+            <b>
+                <a href="/delete.html"> Delete </a>
+            </b>
+        </h3>
+        <br/>
+        This feature deletes the given file from s3 bucket and returns True if deletion successful or False otherwise.
+
+        <br/><br/>
+    </p>
+    
+    <p>
+        <h3>
+            <b>
+                <a href=""> List Files </a>
+            </b>
+        </h3>
+        <br/>
+        This feature provide the list of the files in the s3 bucket for specific prefix. If prefix is not specified it will return all the files. It also support pagination. PageSize default value is 100 and MaxItems default value is 1000 and page. If page is not provided it will return total response.
+
+        <br/><br/>
+    </p>
+    
+</div>
+
+    </body>
+</html>

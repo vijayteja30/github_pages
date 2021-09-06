@@ -1,0 +1,18 @@
+- func_name: upload
+  possibilities: 
+    - upload_file
+    - upload_file_binary
+
+- func_name: download
+  possibilities: 
+    - download_file
+    - download_folder
+    - download_binary_content
+
+- func_name: delete
+  possibilities: 
+    - delete
+
+- func_name: list_files
+  possibilities: 
+    - list_files
