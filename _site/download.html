@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Download s3</title>
+    </head>
+    <body>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'recursive'</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span> <span class="ow">and</span> <span class="n">fh</span><span class="p">.</span><span class="n">download</span><span class="p">(</span><span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'source_file_path'</span><span class="p">),</span>
+                                                          <span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'download_to_file_path'</span><span class="p">)):</span>
+            <span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s">'file: </span><span class="si">{</span><span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"source_file_path"</span><span class="p">)</span><span class="si">}</span><span class="s"> downloaded to path: </span><span class="si">{</span><span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"download_to_file_path"</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">fh</span><span class="p">.</span><span class="n">download_folder</span><span class="p">(</span><span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'source_file_path'</span><span class="p">),</span> <span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'download_to_file_path'</span><span class="p">)):</span>
+            <span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s">'folder: </span><span class="si">{</span><span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"source_file_path"</span><span class="p">)</span><span class="si">}</span><span class="s"> downloaded to path: </span><span class="si">{</span><span class="n">kwargs</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"download_to_file_path"</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">except</span> <span class="n">S3FileDownloadError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger</span><span class="p">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s">'file download failed with an error: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">e</span>
+</code></pre></div></div>
+
+    </body>
+</html>

@@ -20,4 +20,4 @@
     This feature provide the list of the files in the s3 bucket for specific prefix. If prefix is not specified it will return
     all the files. It also support pagination. PageSize default value is 100 and MaxItems default value is 1000 and page.
     If page is not provided it will return total response.
-  lin: /github_pages/list_files.html
+  link: /github_pages/list_files.html
